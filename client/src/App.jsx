@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { useEffect, useState } from "react";
+import "./App.css";
+import Dashboard from "./components/Dashboard";
+import Signin from "./components/Signin";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import Explore from "./components/Explore.jsx/Explore";
+import ProtectedRoute from "./components/ProtectedRoute";
+import axios from "axios";
+// REACT_APP_CLIENT_SECRET = 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
+// REACT_APP_CLIENT_ID = 1059613361149-eti4d087cgueadgc6fmca1m1tsd1900k.apps.googleusercontent.com
+const BaseServerURL = "http://localhost:3000";
 function App() {
-  const [count, setCount] = useState(0)
+  const [isLoggedIn, setisLoggedIn] = useState(false);
+  const init = async () => {
+    const { status, data } = await axios.get(BaseServerURL + "/", {
+      validateStatus: false,
+      withCredentials: true,
+    });
+    console.log("status-", status, "data", data);
+    if (status == 200) {
+      console.log("reaching here");
+      setisLoggedIn(true);
+    }
+  };
+
+  useEffect(() => {
+    console.log("this is from app.jsx useEffect");
+    init();
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      {isLoggedIn ? (
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route
+            path="/explore"
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <Explore />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route path="*" element={<h1>NOT Found </h1>} />
+        </Routes>
+      ) : (
+        <Signin setisLoggedIn={setisLoggedIn} />
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
