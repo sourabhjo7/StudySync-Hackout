@@ -8,7 +8,7 @@ import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import axios from "axios";
 
-const CardComponent = ({playlistID,result}) => {
+const CardComponent = ({playlistID,result,buttonData}) => {
   const AddCourse = async (e) => {
     try{
       const { status, data } = await axios.post(
@@ -63,7 +63,7 @@ const CardComponent = ({playlistID,result}) => {
             size="small"
             sx={{ backgroundColor: "#FFFFFF", color: "black" }}
           >
-            Add to courses{" "}
+            {buttonData}{" "}
           </Button>
           <Typography variant="h6" color="text.secondary">
             {result?.snippet?.channelTitle}
