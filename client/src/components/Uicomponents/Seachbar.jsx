@@ -35,7 +35,7 @@ const Seachbar = ({setSearchResults}) => {
     <Paper
       component="form"
       onSubmit={handleSubmit}
-      sx={{ p: "2px 4px", display: "flex", alignItems: "center", width: 400 }}
+      sx={{ p: "2px 4px", display: "flex", alignItems: "center", width: 600 }}
     >
       <InputBase
         sx={{ ml: 1, flex: 1 }}
@@ -45,7 +45,7 @@ const Seachbar = ({setSearchResults}) => {
           setValue(e.target.value);
         }}
       />
-      <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+      <Divider lx={{ height: 28, m: 0.5 }} orientation="vertical" />
       <IconButton
         type="button"
         sx={{ p: "10px" }}

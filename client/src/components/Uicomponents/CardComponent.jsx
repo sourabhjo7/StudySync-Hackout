@@ -4,12 +4,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-
+import CardActions from '@mui/material/CardActions';
+import Button from '@mui/material/Button';
 
 const CardComponent = ({result}) => {
   
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 500 }} style={{ marginBottom: '20px' }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -17,7 +18,7 @@ const CardComponent = ({result}) => {
           width="{result?.snippet?.thumbnails?.high?.width}"
           image={result?.snippet?.thumbnails?.high?.url}
         />
-        <CardContent>
+        <CardContent sx={{ backgroundColor: '#8DDFCB' }}>
           <Typography gutterBottom variant="h5" component="div">
           {result?.snippet?.title}
           </Typography>
@@ -25,6 +26,12 @@ const CardComponent = ({result}) => {
             {result?.snippet?.description}
           </Typography>
         </CardContent>
+        <CardActions sx={{ backgroundColor: '#8DDFCB', display:'flex', justifyContent:'space-between' }}>
+          <Button size="small" sx={{ backgroundColor: '#39A7FF', color: 'black' }}>Add to courses </Button>
+          <Typography variant="h6" color="text.secondary">
+            {result?.snippet?.channelTitle}
+          </Typography>
+        </CardActions>
       </CardActionArea>
     </Card>
   )
