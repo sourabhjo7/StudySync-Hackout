@@ -1,0 +1,31 @@
+.playerbox{
+  display: flex;
+}
+.left-box {
+  flex: 0.9;
+  background-color: #F5E8C7;
+  text-align: center;
+  height: 591px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #6357bc;
+}
+
+.right-box {
+  flex: 0.4;
+  background-color: #435ee8;
+  text-align: center;
+  height: 591px;
+  border-top: 2px solid #6357bc;
+  border-bottom: 2px solid #6357bc;
+  border-right: 2px solid #6357bc;
+}
+.top-left-box {
+  flex: 0.6;
+}
+
+.bottom-left-box {
+  flex: 0.4;
+  background-color: #e843cd;
+  border-top: 2px solid #6357bc;
+}
