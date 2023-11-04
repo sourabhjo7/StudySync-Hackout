@@ -21,3 +21,33 @@
     }
   
 }
+.container {
+  display: flex;
+  border-radius: 10px; 
+  padding: 10px;
+  margin: 50px;
+  background-color: #FFFFFF;
+  height:450px;
+}
+.box {
+  flex: 1;
+  border: 2px solid #435EE8; 
+  background-color: #DBE7FA;
+  padding: 20px;
+  margin-top:20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+.text {
+  color: #435ee8;
+  font-family: "Roboto-Bold", Helvetica;
+  font-size: 34.5px;
+  font-weight: 700;
+  left: 0;
+  top: 0;
+  width: 286px;
+  text-align: center;
+  }
+  
