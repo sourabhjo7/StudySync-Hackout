@@ -12,6 +12,8 @@ const Youtubeplayer = () => {
             <ReactPlayer
               url="https://www.youtube.com/watch?v=tCvSDnRsGnw"
               controls={true}
+              width="100%"
+              height="100%"
             />
           </div>
           <div className="bottom-left-box">Bottom (40%)</div>
