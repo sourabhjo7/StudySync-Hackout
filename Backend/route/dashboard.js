@@ -10,4 +10,7 @@ const { valToken} = require("../middleware/auth");
 //home route to validate user based on jwt
 router.get("/", valToken, controller.home);
 
+// to add course to specific user
+ router.get("/add-course",valToken,controller.AddCourse);
+
 module.exports = router;
