@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Navbar } from '../Uicomponents/Navbar'
 import './courses.css'
 import axios from "axios";
+import CardCourse from '../Uicomponents/CardCourse';
+import { Typography } from '@mui/material';
 const Courses = () => {
   const [subscribedplaylists, setsubscribedplaylists] = useState([])
   console.log(subscribedplaylists);
@@ -31,9 +33,17 @@ const Courses = () => {
   
   return (
     <div className='coursesPage'>
-    courses
-  <Navbar />
-
+      <Navbar />
+      <div className='headingDiv'>
+        <Typography variant="h3" gutterBottom sx={{ fontFamily: 'Segoe UI', fontStyle: 'bold',textShadow: '2px 2px 2px rgba(0, 0, 0, 0.25)',
+  transform: 'perspective(500px)',
+   }}> Courses</Typography>
+      </div>
+      <div className='cardContainerCourse'>
+        { subscribedplaylists&&(subscribedplaylists?.map((result)=>{
+          return <CardCourse key ={result?.playlistID} result={result} buttonData="Let's Learn"/>
+        }))}
+      </div>
     </div>
   )
 }
