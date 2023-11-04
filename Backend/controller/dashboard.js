@@ -19,16 +19,20 @@ exports.AddCourse= async (req,res)=>{
     console.log(req.body);
     const playlistData=req.body;
     const userid=req.userData.id;
+    const user=await User.findbyId(userid);
     console.log(req.userData,"---",userid);
     let existingCourse=await course.find({playlistID:playlistData.playlistID});
      //if course not in data base create it 
     if(existingCourse.length===0){
-    let=existingCourse=new course({thumbnail:playlistData.thumbnail,title:playlistData.title,playlistID:playlistData.playlistID});
+    existingCourse=new course({thumbnail:playlistData.thumbnail,title:playlistData.title,playlistID:playlistData.playlistID});
     }
-    
+     const courseId=existingCourse._id;
+     user.subscribedplaylists.push(courseId);
+     await user.save();
     res.status(200).json({
-        msg:"success",
-        course:existingCourse
+        success:true,
+        course:existingCourse,
+        user:user
     })
    }
    catch(e){
@@ -38,4 +42,5 @@ exports.AddCourse= async (req,res)=>{
     })
    }
 }
+
 
