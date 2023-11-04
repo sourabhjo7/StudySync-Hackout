@@ -74,3 +74,47 @@ exports.getCoursesByUser = async (req, res) => {
   }
 };
 
+exports.deleteCourseById = async (req, res) => {
+  try {
+    const { playlistID } = req.params;
+    const uid=req.userData.id;
+    let existingCourse = await Course.findOne({
+      playlistID: playlistID,
+    });
+    let user=await User.findOne({_id:uid});
+
+    //if course not in data base then return
+    if (!existingCourse) {
+      return res.status(200).json({
+        success: false,
+        msg: "Course does not exist u need to add it first",
+      });
+    }
+    const courseId = existingCourse._id;
+    //if ref present in user with that course
+    if (user.subscribedplaylists.includes(courseId)) {
+      const index = user.subscribedplaylists.indexOf(courseId);
+      if (index !== -1) {
+        user.subscribedCourses.splice(index, 1);
+        await user.save();
+      
+      return res.status(200).json({
+        success: true,
+        msg: "course is removed from your  courses ",
+      });
+    }
+  }
+  else{
+    return res.status(200).json({
+      success: false,
+      msg: "Course does not exist u need to add it first",
+    });
+  }
+  } catch (error) {
+    console.error("Error:", error);
+    return res.json({
+      success: false,
+      msg: "reload and Try again  ",
+    });
+  }
+};
