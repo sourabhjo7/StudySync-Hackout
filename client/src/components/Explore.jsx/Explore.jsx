@@ -14,7 +14,7 @@ const Explore = () => {
       </div>  
       <div className='cardContainer'>
         {searchResults&&(searchResults?.items?.map((result)=>{
-          return <CardComponent key ={result?.etag} playlistID={result?.id?.playlistId} result={result}/>
+          return <CardComponent key ={result?.etag} playlistID={result?.id?.playlistId} result={result} buttonData="Add to courses"/>
         }))}
       </div>
     </div>
