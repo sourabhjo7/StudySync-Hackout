@@ -4,15 +4,13 @@ import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';
 import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
-import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
-const DashCard = () => {
+const DashCard = ({result}) => {
   return (
     <div>
       <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <ListItem alignItems="flex-start">
-        <PlaylistAddIcon />
         <ListItemText
-          primary="Brunch this weekend?"
+          primary={result?.title}
           secondary={
             <React.Fragment>
               <Typography
@@ -21,9 +19,9 @@ const DashCard = () => {
                 variant="body2"
                 color="text.primary"
               >
-                Ali Connors
+                {result?.channelTitle}
               </Typography>
-              {" — I'll be in your neighborhood doing errands this…"}
+              {result?.description}
             </React.Fragment>
           }
         />

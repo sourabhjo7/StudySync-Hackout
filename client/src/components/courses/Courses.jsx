@@ -41,7 +41,7 @@ const Courses = () => {
       </div>
       <div className='cardContainerCourse'>
         { subscribedplaylists&&(subscribedplaylists?.map((result)=>{
-          return <CardCourse key ={result?.playlistID} result={result} buttonData="Let's Learn"/>
+          return <CardCourse key ={result?._id} result={result} buttonData="Let's Learn"/>
         }))}
       </div>
     </div>
