@@ -4,6 +4,7 @@ import Dashboard from "./components/Dashboard";
 import Signin from "./components/Signin";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Explore from "./components/Explore.jsx/Explore";
+import Courses from "./components/Courses/Courses";
 import ProtectedRoute from "./components/ProtectedRoute";
 import axios from "axios";
 // REACT_APP_CLIENT_SECRET = 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
@@ -41,7 +42,14 @@ function App() {
               </ProtectedRoute>
             }
           />
-
+          <Route
+            path="/courses"
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <Courses />
+              </ProtectedRoute>
+            }
+          />
           <Route path="*" element={<h1>NOT Found </h1>} />
         </Routes>
       ) : (
