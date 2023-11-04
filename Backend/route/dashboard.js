@@ -11,6 +11,6 @@ const { valToken} = require("../middleware/auth");
 router.get("/", valToken, controller.home);
 
 // to add course to specific user
- router.get("/add-course",valToken,controller.AddCourse);
+ router.post("/add-course",valToken,controller.AddCourse);
 
 module.exports = router;
