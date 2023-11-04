@@ -23,7 +23,10 @@
   line-height: 50px;
  justify-content: flex-end;
  font-weight:500;
- font-size: large;
+ font-family:'Segoe UI';
+  font-style: bold;
+  font-size:x-large;
+  color:black;
 }
 .dashboard{
   margin-right: 40px;
