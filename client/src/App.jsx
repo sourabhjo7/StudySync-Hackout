@@ -7,6 +7,7 @@ import Explore from "./components/Explore.jsx/Explore";
 import Courses from "./components/courses/Courses";
 import ProtectedRoute from "./components/ProtectedRoute";
 import axios from "axios";
+import Youtubeplayer from "./components/youtubeplayer/Youtubeplayer";
 
 const BaseServerURL = "http://localhost:3000";
 function App() {
@@ -49,6 +50,14 @@ function App() {
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn}>
                 <Courses />
+              </ProtectedRoute>
+            }
+          />
+            <Route
+            path="/player"
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+               <Youtubeplayer/>
               </ProtectedRoute>
             }
           />
