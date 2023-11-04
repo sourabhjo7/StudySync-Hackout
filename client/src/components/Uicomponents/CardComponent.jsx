@@ -10,7 +10,6 @@ import axios from "axios";
 
 const CardComponent = ({playlistID,result}) => {
   const AddCourse = async (e) => {
-    console.log("==",playlistID)
     try{
       const { status, data } = await axios.post(
         "http://localhost:3000/add-course",
@@ -26,7 +25,6 @@ const CardComponent = ({playlistID,result}) => {
           withCredentials: true,
         }
       );
-      console.log(status,"-->",data);
       alert(data.msg);
     }
     catch(e){

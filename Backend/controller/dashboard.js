@@ -16,18 +16,17 @@ exports.home = (req, res) => {
 // POST  thumbnail:{type:String,required:true} ,title: {type:String,required:true}, playlistID:{type:String,required:true},
 exports.AddCourse = async (req, res) => {
   try {
-    console.log("this is add course route -->",req.body);
+    console.log("this is add course route -->", req.body);
     const userid = req.userData.id;
-    const user = await User.findOne({_id:userid});
-    console.log(req.userData, "---", userid);
+    const user = await User.findOne({ _id: userid });
     let existingCourse = await Course.findOne({
       playlistID: req.body.playlistID,
     });
-    console.log("existing",existingCourse);
+    console.log("existing", existingCourse);
     //if course not in data base create it
     if (!existingCourse) {
       existingCourse = await Course.create(req.body);
-      console.log("course made",existingCourse);
+      console.log("course made", existingCourse);
     }
     const courseId = existingCourse._id;
     if (user.subscribedplaylists.includes(courseId)) {
@@ -51,6 +50,25 @@ exports.AddCourse = async (req, res) => {
     return res.status(400).json({
       success: false,
       msg: "try again",
+      error: e,
+    });
+  }
+};
+
+exports.getCoursesByUser = async (req, res) => {
+  try {
+    const uid = req.userData.id;
+    const coursesbyuser = await User.findOne({ _id: uid }).populate(
+      "subscribedplaylists"
+    );
+    return res.status(200).json({
+      success: true,
+      user: coursesbyuser,
+    });
+  } catch (e) {
+    console.log(e);
+    return res.json({
+      success: false,
       error: e,
     });
   }
