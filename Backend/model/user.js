@@ -5,6 +5,10 @@ const userSchema = new mongoose.Schema({
     lastName: { type: String, required: true },
     email: { type: String, required: true },
     profilePicture: { type: String, required: false },
+    subscribedplaylists: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Course', // Reference to the Course collection
+      }],
 });
 
 

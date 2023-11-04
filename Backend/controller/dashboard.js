@@ -10,3 +10,13 @@ exports.home = (req, res) => {
         data: req.userData,
     });
 }
+
+exports.AddCourse=(req,res)=>{
+    console.log("this is add course route ");
+    const userid=req.userData.id;
+    console.log(req.userData,"---",userid);
+    res.json({
+        msg:"success"
+    })
+}
+
