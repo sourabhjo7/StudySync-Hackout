@@ -7,6 +7,7 @@ import DashCard from './Uicomponents/DashCard'
 import './Dashboard.css'
 const Dashboard = () => {
   const [playlists, setplaylists] = useState([])
+  const [user, setuser] = useState({});
   console.log(playlists);
   const fetchCoursesbyUser = async (e) => {
     try{
@@ -18,6 +19,7 @@ const Dashboard = () => {
         }
       );
      console.log(status,data);
+     setuser(data.user);
      setplaylists(data.user.subscribedplaylists);
     }
     catch(e){
