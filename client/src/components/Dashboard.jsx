@@ -3,7 +3,7 @@ import {Navbar} from "./Uicomponents/Navbar"
 import './Dashboard.css'
 const Dashboard = () => {
   return (
-    <div className='dashboardPage'>
+    <div className='dashboard2'>
       <Navbar />
     </div>
 
