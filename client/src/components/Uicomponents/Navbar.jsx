@@ -13,7 +13,7 @@ export const Navbar = () => {
         <Link to="/" style={{ textDecoration: 'none',color: '#0F0F0F',fontFamily: 'Segoe UI', fontStyle: 'bold', fontSize: 'large' }}>
           <div className="dashboard">Dashboard<br/></div>
         </Link>
-        <Link style={{ textDecoration: 'none',color: '#0F0F0F',fontFamily: 'Segoe UI', fontStyle: 'bold', fontSize: 'large' }}>
+        <Link to="/courses" style={{ textDecoration: 'none',color: '#0F0F0F',fontFamily: 'Segoe UI', fontStyle: 'bold', fontSize: 'large' }}>
           <div className="courses">Courses<br/></div>
         </Link>
         <Link to="/explore" style={{ textDecoration: 'none',color: '#0F0F0F',fontFamily: 'Segoe UI', fontStyle: 'bold', fontSize: 'large' }}>
