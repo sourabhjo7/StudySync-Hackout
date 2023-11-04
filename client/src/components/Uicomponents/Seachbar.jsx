@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
 import {youtubeApiInstance} from "../../youtube";
-import { Alert } from "@mui/material";
+
 const Seachbar = ({setSearchResults}) => {
   const [value, setValue] = useState("");
 
