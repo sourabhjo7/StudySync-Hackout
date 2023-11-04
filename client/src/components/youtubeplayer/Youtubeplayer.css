@@ -1,11 +1,13 @@
 .playerbox{
   display: flex;
+  height: 100vh;
+  width: 100vw;
 }
 .left-box {
-  flex: 0.9;
+  flex: 0.6;
   background-color: #F5E8C7;
   text-align: center;
-  height: 591px;
+  height: 100%; 
   display: flex;
   flex-direction: column;
   border: 2px solid #6357bc;
@@ -15,17 +17,17 @@
   flex: 0.4;
   background-color: #435ee8;
   text-align: center;
-  height: 591px;
+  height: 100%;
   border-top: 2px solid #6357bc;
   border-bottom: 2px solid #6357bc;
   border-right: 2px solid #6357bc;
 }
 .top-left-box {
-  flex: 0.6;
+  height: 60vh;
 }
 
 .bottom-left-box {
-  flex: 0.4;
+  height: 60%;
   background-color: #e843cd;
   border-top: 2px solid #6357bc;
 }

@@ -13,5 +13,7 @@ router.get("/", valToken, controller.home);
 // to add course to specific user
 router.post("/add-course",valToken,controller.AddCourse);
 router.get("/subscribed-courses",valToken,controller.getCoursesByUser);
+router.get("/delete-course/:playlistID",valToken,controller.deleteCourseById);
+
 
 module.exports = router;
