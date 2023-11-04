@@ -4,11 +4,10 @@ import Dashboard from "./components/Dashboard";
 import Signin from "./components/Signin";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Explore from "./components/Explore.jsx/Explore";
-import Courses from "./components/Courses/Courses";
+import Courses from "./components/courses/Courses";
 import ProtectedRoute from "./components/ProtectedRoute";
 import axios from "axios";
-// REACT_APP_CLIENT_SECRET = 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
-// REACT_APP_CLIENT_ID = 1059613361149-eti4d087cgueadgc6fmca1m1tsd1900k.apps.googleusercontent.com
+
 const BaseServerURL = "http://localhost:3000";
 function App() {
   const [isLoggedIn, setisLoggedIn] = useState(false);
