@@ -21,6 +21,9 @@ function App() {
       console.log("reaching here");
       setisLoggedIn(true);
     }
+    else{
+      setisLoggedIn(false);
+    }
   };
 
   useEffect(() => {
