@@ -6,11 +6,10 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
-
-
+import DeleteIcon from '@mui/icons-material/Delete';
 const CardCourse = ({result,buttonData}) => {
   return (
-    <Card sx={{ width: '400px'  }} style={{ marginBottom: "20px" }}>
+    <Card sx={{ width: '400px'  }} style={{ marginBottom: "20px" ,backgroundColor: "#F5E8C7",}}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -39,9 +38,7 @@ const CardCourse = ({result,buttonData}) => {
           >
             {buttonData}{" "}
           </Button>
-          <Typography variant="h6" color="text.secondary">
-            {result?.channelTitle}
-          </Typography>
+          <DeleteIcon />
         </CardActions>
       </CardActionArea>
     </Card>
