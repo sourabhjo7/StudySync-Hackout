@@ -18,7 +18,7 @@ const CardComponent = ({result}) => {
           width="{result?.snippet?.thumbnails?.high?.width}"
           image={result?.snippet?.thumbnails?.high?.url}
         />
-        <CardContent sx={{ backgroundColor: '#8DDFCB' }}>
+        <CardContent sx={{ backgroundColor: '#F5E8C7' }}>
           <Typography gutterBottom variant="h5" component="div">
           {result?.snippet?.title}
           </Typography>
@@ -26,8 +26,8 @@ const CardComponent = ({result}) => {
             {result?.snippet?.description}
           </Typography>
         </CardContent>
-        <CardActions sx={{ backgroundColor: '#8DDFCB', display:'flex', justifyContent:'space-between' }}>
-          <Button size="small" sx={{ backgroundColor: '#39A7FF', color: 'black' }}>Add to courses </Button>
+        <CardActions sx={{ backgroundColor: '#F5E8C7', display:'flex', justifyContent:'space-between' }}>
+          <Button size="small" sx={{ backgroundColor: '#FFFFFF', color: 'black' }}>Add to courses </Button>
           <Typography variant="h6" color="text.secondary">
             {result?.snippet?.channelTitle}
           </Typography>
