@@ -39,6 +39,7 @@
   margin-left: 10px;
   margin-right: 10px;
   text-align: center;
+  overflow-y: scroll;
 }
 .text {
   color: #435ee8;
@@ -50,4 +51,3 @@
   width: 286px;
   text-align: center;
   }
-  
