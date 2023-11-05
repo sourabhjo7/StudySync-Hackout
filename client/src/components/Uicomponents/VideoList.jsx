@@ -6,9 +6,10 @@ import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 import { useState } from 'react';
 import { Divider } from '@mui/material';
+import { Link } from 'react-router-dom';
 const VideoList = ({videos}) => {
   const [checked, setChecked] = useState([0]);
-
+  console.log(videos);
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
@@ -39,7 +40,7 @@ const VideoList = ({videos}) => {
                 onClick={handleToggle(value)}
               />
             </ListItemIcon>
-            <ListItemText id={value.etag} primary={value.snippet.title} />
+           <Link to={`/player/${value.snippet.playlistId}?videoId=${value.snippet.resourceId.videoId}`}> <ListItemText id={value.etag} primary={value.snippet.title} /> </Link> 
             <hr></hr>
         </ListItem>
         );
