@@ -53,14 +53,15 @@ app.use("/auth", authRouter);
 app.post("/ask-ai", valToken, async (req, res) => {
   try {
     const { query } = req.body;
-    const llmResult = await llm.call(text);
+    const llmResult = await llm.predict(query);
     console.log(llmResult);
     return res.status(200).json({
+      success: true,
       message: llmResult,
     });
   } catch (e) {
     return res.json({
-      sucess: false,
+      success: false,
       error: e,
     });
   }

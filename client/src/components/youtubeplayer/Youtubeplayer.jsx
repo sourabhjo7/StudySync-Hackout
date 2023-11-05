@@ -5,6 +5,7 @@ import ReactPlayer from "react-player";
 import getVideos from "../../getvideobyplaylist";
 import { useParams, useSearchParams } from "react-router-dom";
 import VideoList from "../Uicomponents/VideoList";
+import AskAi from "../../AskAi/AskAi";
 const Youtubeplayer = () => {
   const [videos, setvideos] = useState([]);
   const { playlistId } = useParams();
@@ -39,7 +40,7 @@ const Youtubeplayer = () => {
               height="100%"
             />
           </div>
-          <div className="bottom-left-box">Bottom (40%)</div>
+          <div className="bottom-left-box"><AskAi/></div>
         </div>
         <div className="right-box">
           <VideoList videos={videos} />
