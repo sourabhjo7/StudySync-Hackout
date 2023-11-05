@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import DashCard from './Uicomponents/DashCard'
 import './Dashboard.css'
+import ProfileCard from './Uicomponents/ProfileCard'
 const Dashboard = () => {
   const [playlists, setplaylists] = useState([])
   const [user, setuser] = useState({});
@@ -56,6 +57,9 @@ const Dashboard = () => {
       <div className="box">
         <div className='text'>
           Profile
+        </div>
+        <div className='profileWrapper'>
+            <ProfileCard user={user} />
         </div>
       </div>
     </div>

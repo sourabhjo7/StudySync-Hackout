@@ -26,7 +26,7 @@ const DashCard = ({result}) => {
           }
         />
       </ListItem>
-      <Divider variant="inset" component="li" />
+      <Divider variant="inset" component="li" sx={{position:'relative',right:"10%",borderColor: '#333',}} />
     </List>
     </div>
   )
