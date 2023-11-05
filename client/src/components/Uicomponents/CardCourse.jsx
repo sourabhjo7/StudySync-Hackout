@@ -7,7 +7,10 @@ import { CardActionArea } from "@mui/material";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useNavigate } from 'react-router-dom';
 const CardCourse = ({result,buttonData}) => {
+  console.log("--->",result);
+  const navigate=useNavigate();
   return (
     <Card sx={{ width: '400px'  }} style={{ marginBottom: "20px" ,backgroundColor: "#F5E8C7",}}>
       <CardActionArea>
@@ -33,10 +36,13 @@ const CardCourse = ({result,buttonData}) => {
           }}
         >
           <Button
+          onClick={()=>{
+            navigate(`/player/${result?.playlistID}`)
+          }}
             size="small"
             sx={{ backgroundColor: "#FFFFFF", color: "black" }}
           >
-            {buttonData}{" "}
+            {buttonData}
           </Button>
           <DeleteIcon />
         </CardActions>

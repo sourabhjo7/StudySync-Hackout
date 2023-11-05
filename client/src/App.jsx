@@ -54,7 +54,7 @@ function App() {
             }
           />
             <Route
-            path="/player"
+            path="/player/:playlistId"
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn}>
                <Youtubeplayer/>

@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Youtubeplayer.css";
 import { Navbar } from "../Uicomponents/Navbar";
 import ReactPlayer from "react-player";
+import getVideos from "../../getvideobyplaylist";
+import { useParams } from "react-router-dom";
+
 const Youtubeplayer = () => {
+  const {playlistId}=useParams();
+  const calldataApi=async()=>{
+    const videos=await getVideos(playlistId);
+    console.log("----videos--->",videos);
+    
+  }
+  useEffect(() => {
+  console.log("use effect");
+    calldataApi();  
+  }, [])
+  
   return (
     <>
       <Navbar />
