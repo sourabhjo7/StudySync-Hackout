@@ -48,11 +48,9 @@ const CardCourse = ({ result, buttonData,deleteSubscribedCourse }) => {
           >
             {buttonData}
           </Button>
-          <DeleteIcon
-            onClick={() => {
-              deleteSubscribedCourse();
-            }}
-          />
+          <Typography variant="h6" color="text.secondary" >
+            {result?.channelTitle}
+          </Typography>
         </CardActions>
       </CardActionArea>
     </Card>
