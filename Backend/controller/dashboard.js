@@ -77,10 +77,13 @@ exports.getCoursesByUser = async (req, res) => {
 exports.deleteCourseById = async (req, res) => {
   try {
     const { playlistID } = req.params;
+    console.log(req.params);
+    console.log(playlistID);
     const uid=req.userData.id;
     let existingCourse = await Course.findOne({
       playlistID: playlistID,
     });
+    console.log(existingCourse);
     let user=await User.findOne({_id:uid});
 
     //if course not in data base then return

@@ -8,6 +8,27 @@ import { Typography } from '@mui/material';
 const Courses = () => {
   const [subscribedplaylists, setsubscribedplaylists] = useState([])
   console.log(subscribedplaylists);
+
+  const deleteSubscribedCourse = async (result) => {
+    try {
+      const { status, data } = await axios.get(
+        `http://localhost:3000/delete-course/${result?.playlistID}`,
+        {
+          validateStatus: false,
+          withCredentials: true,
+        }
+      );
+      
+      if(data.success){
+        await fetchCoursesbyUser();
+      }
+      alert(data.msg);
+    } catch (e) {
+      console.log("error --", e);
+      alert("try again");
+    }
+  };
+
   const fetchCoursesbyUser = async (e) => {
     try{
       const { status, data } = await axios.get(
@@ -41,7 +62,7 @@ const Courses = () => {
       </div>
       <div className='cardContainerCourse'>
         { subscribedplaylists&&(subscribedplaylists?.map((result)=>{
-          return <CardCourse key ={result?._id} result={result} buttonData="Let's Learn"/>
+          return <CardCourse key ={result?._id} deleteSubscribedCourse ={deleteSubscribedCourse} result={result} buttonData="Let's Learn"/>
         }))}
       </div>
     </div>
