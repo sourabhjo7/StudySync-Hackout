@@ -4,6 +4,7 @@ import { Navbar } from "../Uicomponents/Navbar";
 import ReactPlayer from "react-player";
 import getVideos from "../../getvideobyplaylist";
 import { useParams, useSearchParams } from "react-router-dom";
+import VideoList from "../Uicomponents/VideoList";
 const Youtubeplayer = () => {
   const [videos, setvideos] = useState([]);
   const { playlistId } = useParams();
@@ -41,9 +42,7 @@ const Youtubeplayer = () => {
           <div className="bottom-left-box">Bottom (40%)</div>
         </div>
         <div className="right-box">
-          {videos?.map((video, index) => {
-            <div key={index}>{video.snippet.resourceId.videoId}</div>;
-          })}
+          <VideoList videos={videos} />
         </div>
       </div>
     </>
