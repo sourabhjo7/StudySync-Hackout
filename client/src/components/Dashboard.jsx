@@ -6,6 +6,8 @@ import { useEffect } from 'react'
 import DashCard from './Uicomponents/DashCard'
 import './Dashboard.css'
 import ProfileCard from './Uicomponents/ProfileCard'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
 const Dashboard = () => {
   const [playlists, setplaylists] = useState([])
   const [user, setuser] = useState({});
@@ -34,7 +36,19 @@ const Dashboard = () => {
   useEffect(() => {
     fetchCoursesbyUser();
   }, [])
-  
+  ChartJS.register(ArcElement, Tooltip, Legend);
+  const example = {
+    labels: ["progress"],
+    datasets: [
+      {
+        label: "progress",
+        data: [12, 50],
+        backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(247, 239, 229, 1)"],
+        borderColor: ["rgba(31, 23, 23, 1.0)", "rgba(0, 0, 0, 1)"],
+        borderWidth: 1
+      }
+    ]
+  };
   return (
     <div className='dashboard2'>
       <Navbar />
@@ -52,6 +66,9 @@ const Dashboard = () => {
       <div className="box">
         <div className='text'>
           Progress
+        </div>
+        <div>
+        <Doughnut data={example} />
         </div>
       </div>
       <div className="box">
