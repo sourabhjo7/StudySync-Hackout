@@ -16,7 +16,7 @@
 .right-box {
   display: flex;
   flex-direction: column;
-  background-color: #435ee8;
+  background-color: #ffffff;
   text-align: center;
   height: 100%;
   width: 40%;
@@ -24,6 +24,7 @@
   border-top: 2px solid #6357bc;
   border-bottom: 2px solid #6357bc;
   border-right: 2px solid #6357bc;
+  overflow-y: scroll;
 }
 .top-left-box {
   height: 100%;

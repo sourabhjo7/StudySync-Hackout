@@ -5,7 +5,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 import { useState } from 'react';
-
+import { Divider } from '@mui/material';
 const VideoList = ({videos}) => {
   const [checked, setChecked] = useState([0]);
 
@@ -22,12 +22,13 @@ const VideoList = ({videos}) => {
     setChecked(newChecked);
   };
   return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+    <List sx={{ width: '100%', bgcolor: 'background.paper',paddingLeft:'10px' }}>
       {videos?.map((value) => {
         return (
           <ListItem
             key={value.etag}
             disablePadding
+            sx={{ padding: '16px', borderRadius: '4px',boxShadow: '0 0 5px rgba(0, 0, 0, 0.25)',transition: 'all 0.2s ease-in-out' }}
           >
             <ListItemIcon>
               <Checkbox
@@ -39,6 +40,7 @@ const VideoList = ({videos}) => {
               />
             </ListItemIcon>
             <ListItemText id={value.etag} primary={value.snippet.title} />
+            <hr></hr>
         </ListItem>
         );
       })}
