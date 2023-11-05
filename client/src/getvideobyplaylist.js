@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyCqHotHqFvV211h6ev84Rw3egDf8SNWlGc";
+const API_KEY = "AIzaSyDObxykBym5CPBxtd68LdnfHV9KjJArlKk";
 const _URL = "https://www.googleapis.com/youtube/v3/playlistItems";
 var result = [];
 var nextPageToken;
