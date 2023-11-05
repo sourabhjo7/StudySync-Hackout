@@ -7,6 +7,7 @@ import googleicon from "./images/gicon.jpeg";
 import signinImage from "./images/signin.png";
 const UserBaseUrl = "http://localhost:3000";
 const Signin = ({setisLoggedIn}) => {
+  const navigate = useNavigate()
   const callGoogleSignin = async (accessToken) => {
     try {
       // { validateStatus: false, withCredentials: true } this takes with them cookies after body 
@@ -17,6 +18,7 @@ const Signin = ({setisLoggedIn}) => {
       if(status==200){
         console.log("logged in STATUS  before navigate",status);
         setisLoggedIn(true);
+        navigate("/")
         console.log("logged in STATUS  after navigate",status);
       }
       
