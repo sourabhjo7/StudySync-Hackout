@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 const DashCard = ({result}) => {
   return (
     <div>
-      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper',marginTop:"5px",position:'relative',left:'2%' }}>
       <ListItem alignItems="flex-start">
         <ListItemText
           primary={result?.title}
