@@ -14,10 +14,13 @@
 }
 
 .right-box {
+  display: flex;
+  flex-direction: column;
   background-color: #435ee8;
   text-align: center;
   height: 100%;
   width: 40%;
+  color: black;
   border-top: 2px solid #6357bc;
   border-bottom: 2px solid #6357bc;
   border-right: 2px solid #6357bc;
