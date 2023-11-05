@@ -32,7 +32,7 @@ const AskAi = () => {
     <div>
       <div className="chatbox">
         <div className="chatbox-header">
-          <h1>ASK AI </h1>
+          <h1 className="askai">ASK AI </h1>
         </div>
         <div className="chatbox-messages">
           <div>
@@ -42,14 +42,16 @@ const AskAi = () => {
           </div>
         </div>
         <div className="chatbox-input">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} style={{ width: '100%' }}>
             <input
               type="text"
               value={query}
+              placeholder="Send a Message"
               onChange={(e) => {
                 setquery(e.target.value);
               }}
               name="message"
+              style={{ width: '90%' }}
             />
             <input type="submit" value="Send" />
           </form>

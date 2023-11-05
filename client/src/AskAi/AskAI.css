@@ -1,16 +1,14 @@
 .chatbox {
-    background-color: #fff;
-    border-radius: 10px;
+    background-color: #14658e;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
-    margin: 10px;
     padding: 10px;
     position: relative;
   }
   
   .chatbox-header {
-    background-color: #000;
+    background-color: #749cbc;
     color: #fff;
-    padding: 10px;
+    padding: 3px;
   }
   
   .chatbox-messages {
@@ -23,7 +21,7 @@
   }
   
   .chatbox-message-text {
-    font-size: 16px;
+    font-size: 30px;
     line-height: 1.5;
     margin: 0;
   }
@@ -59,9 +57,13 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    background-color: #000;
+    background-color: #87C4FF;
     color: #fff;
     border: none;
     font-size: 16px;
     padding: 10px;
+  }
+  .askai{
+    font-size: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
