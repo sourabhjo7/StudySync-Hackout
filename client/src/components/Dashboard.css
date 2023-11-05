@@ -46,10 +46,10 @@
   font-family: "Roboto-Bold", Helvetica;
   font-size: 34.5px;
   font-weight: 700;
-  left: 0;
-  top: 0;
   width: 286px;
   text-align: center;
+  position: relative;
+  left: 10%;
   }
 .profileWrapper{
   height: 100%;
