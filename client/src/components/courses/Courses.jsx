@@ -4,7 +4,7 @@ import './courses.css'
 import axios from "axios";
 import CardCourse from '../Uicomponents/CardCourse';
 import { Typography } from '@mui/material';
-
+//courses page
 const Courses = () => {
   const [subscribedplaylists, setsubscribedplaylists] = useState([])
   console.log(subscribedplaylists);
